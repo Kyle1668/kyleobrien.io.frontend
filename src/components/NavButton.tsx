@@ -8,10 +8,12 @@ interface props {
 }
 
 const NavButton: React.FC<props> = (input: props) => {
+  const activeClassName = input.isCurrentPage === true
+    ? "ActiveNavButton"
+    : "InactiveNavButton";
+
   return (
-    <button className="NavButton">
-      {input.pageName}
-    </button>
+    <button className={`NavButton ${activeClassName}`}>{input.pageName}</button>
   );
 };
 
