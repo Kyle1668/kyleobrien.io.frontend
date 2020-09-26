@@ -1,16 +1,21 @@
 import IEnvironmentConfig from "./IEnvironmentConfig";
 
 export default class EnvironmentConfig implements IEnvironmentConfig {
+  envManager: NodeJS.ProcessEnv;
+
+  EnvironmentConfig(envNodeProcess: NodeJS.ProcessEnv = null) {
+    this.envManager = envNodeProcess !== null ? envNodeProcess : process.env;
+  }
+
   isProduction(): boolean {
-    return true;
+    return this.envManager.NODE_ENV === "PROD";
   }
 
   isDevelopment(): boolean {
-    return true;
+    return this.envManager.NODE_ENV === "DEV";
   }
 
   getEnvVariable(variableName: string): string {
-    const value: string = process.env[variableName];
-    return value;
+    return this.envManager[variableName];
   }
 }
