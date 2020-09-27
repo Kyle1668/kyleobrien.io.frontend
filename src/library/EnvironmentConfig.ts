@@ -1,21 +1,30 @@
+import { exception } from "console";
 import IEnvironmentConfig from "./IEnvironmentConfig";
 
 export default class EnvironmentConfig implements IEnvironmentConfig {
-  envManager: NodeJS.ProcessEnv;
+	envManager: NodeJS.ProcessEnv;
 
-  EnvironmentConfig(envNodeProcess: NodeJS.ProcessEnv = null) {
-    this.envManager = envNodeProcess !== null ? envNodeProcess : process.env;
-  }
+	constructor(envNodeProcess: NodeJS.ProcessEnv) {
+		this.envManager = envNodeProcess !== null ? envNodeProcess : process.env;
+	}
 
-  isProduction(): boolean {
-    return this.envManager.NODE_ENV === "PROD";
-  }
+	isProduction(): boolean {
+		if (this.envManager.NODE_ENV === undefined) {
+			throw exception("NODE_ENV  env var is not defined ");
+		}
 
-  isDevelopment(): boolean {
-    return this.envManager.NODE_ENV === "DEV";
-  }
+		return this.envManager.NODE_ENV.toLowerCase() === "production";
+	}
 
-  getEnvVariable(variableName: string): string {
-    return this.envManager[variableName];
-  }
+	isDevelopment(): boolean {
+		if (this.envManager.NODE_ENV === undefined) {
+			throw exception("NODE_ENV  env var is not defined ");
+		}
+
+		return this.envManager.NODE_ENV.toLowerCase() === "development";
+	}
+
+	getEnvVariable(variableName: string): string | undefined {
+		return this.envManager[variableName];
+	}
 }

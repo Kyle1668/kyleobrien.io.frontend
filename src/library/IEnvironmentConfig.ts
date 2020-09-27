@@ -1,7 +1,7 @@
 export default interface IEnvironmentConfig {
-  isProduction(): boolean;
+	isProduction(): boolean;
 
-  isDevelopment(): boolean;
+	isDevelopment(): boolean;
 
-  getEnvVariable(variableName: string): string;
+	getEnvVariable(variableName: string): string | undefined;
 }
