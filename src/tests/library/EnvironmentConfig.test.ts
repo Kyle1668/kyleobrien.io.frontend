@@ -1,14 +1,18 @@
 import EnvironmentConfig from "../../library/EnvironmentConfig";
+import MockProcessEnv from "../mocks/MockProcessEnv";
 
-// class MockEnvProcess implements NodeJS.ProcessEnv {
-//     NODE_ENV: string = "",
+describe("test environment variable lookup for EnvironmentConfig", () => {
+	it("should return correct API key", () => {
+		const mockProcess = new MockProcessEnv("production", "kyobrien.io");
+		mockProcess.API_KEY = "foo";
+	});
 
-// 	[key: string]: "";
-// }
+	it("should have correct NODE_ENV", () => {
+		const mockProcess = new MockProcessEnv("production", "kyobrien.io");
 
-// describe("Env var lookup tests", () => {
-// 	it("should return true when NODE_ENV id development", () => {
-// 		const mockProcess = new MockEnvProcess();
-// 		const testConfig = new EnvironmentConfig(mockProcess);
-// 	});
-// });
+		const testConfig = new EnvironmentConfig(mockProcess);
+
+		expect(testConfig.isProduction()).toBeTruthy();
+		expect(testConfig.isDevelopment()).toBeFalsy();
+	});
+});
