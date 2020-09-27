@@ -1,6 +1,7 @@
 {
 	"env": {
 		"browser": true,
+		"node": true,
 		"es6": true
 	},
 	"extends": [
@@ -9,7 +10,9 @@
 		"prettier",
 		"plugin:prettier/recommended",
 		"prettier/react",
-		"prettier/@typescript-eslint"
+		"prettier/@typescript-eslint",
+		"plugin:@typescript-eslint/eslint-recommended",
+		"plugin:@typescript-eslint/recommended"
 	],
 	"globals": {
 		"Atomics": "readonly",
@@ -24,6 +27,12 @@
 		"sourceType": "module"
 	},
 	"plugins": ["react", "@typescript-eslint"],
-	"rules": {},
+	"rules": {
+		"react/jsx-filename-extension": [2, { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+		"no-use-before-define": "off",
+		"import/extensions": "off",
+		"no-undef": "off",
+		"import/no-unresolved": "off"
+	},
 	"ignorePatterns": ["./node_modules/", "./public/", "./src/serviceWorker.ts"]
 }
