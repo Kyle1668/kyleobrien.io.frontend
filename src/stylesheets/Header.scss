@@ -6,10 +6,45 @@
 }
 
 .Header {
-	.NavButton {
-		margin-left: 25px;
-		margin-right: 25px;
-		width: 160px;
-		text-align: center;
+	.image-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		margin-top: 25px;
+	}
+
+	.image-container {
+		img {
+			height: 150px;
+			width: 150px;
+			border-radius: 50%;
+		}
+	}
+
+	.text-container {
+		margin-top: 30px;
+		margin-bottom: 40px;
+	}
+
+	.text-container {
+		p {
+			font-size: large;
+		}
+	}
+
+	.button-container {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		margin-top: 25px;
+	}
+
+	.button-container {
+		.NavButton {
+			margin-left: 25px;
+			margin-right: 25px;
+			width: 160px;
+			text-align: center;
+		}
 	}
 }
