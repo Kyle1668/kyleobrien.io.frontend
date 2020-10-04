@@ -6,7 +6,6 @@ import "../stylesheets/Header.scss";
 export const Header: React.FC = () => {
 	return (
 		<div className="Header">
-			{/* <h1>Kyle O&apos;Brien</h1> */}
 			<div className="image-container">
 				<img
 					id="profile-picture"
