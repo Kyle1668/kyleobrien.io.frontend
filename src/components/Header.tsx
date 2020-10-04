@@ -10,7 +10,7 @@ export const Header: React.FC = () => {
 			<div className="image-container">
 				<img
 					id="profile-picture"
-					src="https://koioassets.blob.core.windows.net/images/zoka-profile.JPG"
+					src="https://koioassets.blob.core.windows.net/images/zoka-profile-cropped.png"
 					alt="Kyle in a coffee shop"
 				/>
 			</div>
