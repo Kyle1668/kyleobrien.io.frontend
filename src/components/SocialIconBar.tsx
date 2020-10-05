@@ -41,7 +41,7 @@ const EmailIcon = styled(MdEmail)`
 	${socialIconStyles}
 `;
 
-export const SocialIconBar: React.FC = () => {
+const SocialIconBar: React.FC = () => {
 	return (
 		<SocialIconRowContainer>
 			<SocialIconRow>

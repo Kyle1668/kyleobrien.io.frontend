@@ -1,27 +1,72 @@
 import React from "react";
+import styled from "styled-components";
 import NavButton from "./NavButton";
 
-import "../stylesheets/Header.scss";
+const HeaderWrapper = styled.div`
+	width: 100%;
+	padding-top: 100px;
+	padding-bottom: 100px;
+	text-align: center;
+`;
 
-export const Header: React.FC = () => {
+const ImageContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 25px;
+`;
+
+const ProfilePicture = styled.img`
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+	border: 2px solid black;
+`;
+
+const TextContainer = styled.div`
+	margin-top: 30px;
+	margin-bottom: 40px;
+`;
+
+const BioText = styled.p`
+	font-size: 20px;
+`;
+
+const ButtonContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	margin-top: 25px;
+`;
+
+const PageNavButton = styled(NavButton)`
+	margin-left: 25px;
+	margin-right: 25px;
+	width: 160px;
+	text-align: center;
+`;
+
+const Header: React.FC = () => {
 	return (
-		<div className="Header">
-			<div className="image-container">
-				<img
+		<HeaderWrapper>
+			<ImageContainer>
+				<ProfilePicture
 					id="profile-picture"
 					src="https://koioassets.blob.core.windows.net/images/zoka-profile-cropped.png"
 					alt="Kyle in a coffee shop"
 				/>
-			</div>
-			<div className="text-container">
-				<p>Hi, I’m a software engineer and writer living in Bellevue, Washington </p>
-			</div>
-			<div className="button-container">
-				<NavButton pageName="Articles" isCurrentPage />
-				<NavButton pageName="About" isCurrentPage={false} />
-				<NavButton pageName="Experience" isCurrentPage={false} />
-			</div>
-		</div>
+			</ImageContainer>
+			<TextContainer>
+				<BioText>
+					Hi, I’m a software engineer and writer living in Bellevue, Washington{" "}
+				</BioText>
+			</TextContainer>
+			<ButtonContainer>
+				<PageNavButton pageName="Articles" isCurrentPage />
+				<PageNavButton pageName="About" isCurrentPage={false} />
+				<PageNavButton pageName="Experience" isCurrentPage={false} />
+			</ButtonContainer>
+		</HeaderWrapper>
 	);
 };
 
