@@ -1,32 +1,64 @@
 import React from "react";
 import { FaLinkedin, FaGithub, FaMedium } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import styled, { css } from "styled-components";
 
-import "../stylesheets/SocialIconBar.scss";
+const SocialIconRowContainer = styled.div`
+	margin-top: 50px;
+	margin-left: 200px;
+`;
 
-const iconStyles: React.CSSProperties = {
-	height: "25px",
-	width: "25px",
-	color: "#343a40",
-	margin: "15px",
-};
+const SocialIconRow = styled.div`
+	display: flex;
+	flex-direction: row;
+`;
+
+const IconAnchorWrapper = styled.a`
+	color: inherit;
+	text-decoration: none;
+`;
+
+const socialIconStyles = css`
+	height: 30px;
+	width: 30px;
+	color: #343a40;
+	margin: 15px;
+`;
+
+const LinkedInIcon = styled(FaLinkedin)`
+	${socialIconStyles}
+`;
+
+const GithubIcon = styled(FaGithub)`
+	${socialIconStyles}
+`;
+
+const MediumIcon = styled(FaMedium)`
+	${socialIconStyles}
+`;
+
+const EmailIcon = styled(MdEmail)`
+	${socialIconStyles}
+`;
 
 export const SocialIconBar: React.FC = () => {
 	return (
-		<div className="social-icon-bars">
-			<a href="https://www.linkedin.com/in/kyle1668/" target="#">
-				<FaLinkedin color="black" style={iconStyles} />
-			</a>
-			<a href="https://github.com/kyle1668" target="#">
-				<FaGithub color="black" style={iconStyles} />
-			</a>
-			<a href="https://medium.com/@kyleobrien1668" target="#">
-				<FaMedium color="black" style={iconStyles} />
-			</a>
-			<a href="mailto:kyledevinobrien1@gmail.com" target="#">
-				<MdEmail color="black" style={iconStyles} />
-			</a>
-		</div>
+		<SocialIconRowContainer>
+			<SocialIconRow>
+				<IconAnchorWrapper href="https://www.linkedin.com/in/kyle1668/" target="#">
+					<LinkedInIcon />
+				</IconAnchorWrapper>
+				<IconAnchorWrapper href="https://github.com/kyle1668" target="#">
+					<GithubIcon />
+				</IconAnchorWrapper>
+				<IconAnchorWrapper href="https://medium.com/@kyleobrien1668" target="#">
+					<MediumIcon />
+				</IconAnchorWrapper>
+				<IconAnchorWrapper href="mailto:kyledevinobrien1@gmail.com" target="#">
+					<EmailIcon />
+				</IconAnchorWrapper>
+			</SocialIconRow>
+		</SocialIconRowContainer>
 	);
 };
 
