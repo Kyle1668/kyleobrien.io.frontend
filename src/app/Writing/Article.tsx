@@ -10,7 +10,8 @@ const ArticleContainer = styled.div`
 `;
 
 const ArticleContainerHead = styled.div`
-	border-bottom: 1px solid black;
+	padding-bottom: 15px;
+	border-bottom: 2px solid #c4c4c4;
 	:h1 {
 		font-size: 24px;
 	}
