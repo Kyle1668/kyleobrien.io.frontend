@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Header from "./Header";
-import SocialIconBar from "./SocialIconBar";
+import Header from "./Header/Header";
 
 const AppWrapper = styled.div`
 	color: #343a40;
@@ -13,7 +12,6 @@ const AppWrapper = styled.div`
 const App: React.FC = () => {
 	return (
 		<AppWrapper>
-			<SocialIconBar />
 			<Header />
 		</AppWrapper>
 	);
