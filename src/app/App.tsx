@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "./Header/Header";
+import { PageContext, startPage } from "../pages/PageContext";
 
 const AppWrapper = styled.div`
 	color: #343a40;
@@ -10,10 +11,14 @@ const AppWrapper = styled.div`
 `;
 
 const App: React.FC = () => {
+	const [currentPage, setCurrentPage] = React.useState(startPage);
+
 	return (
-		<AppWrapper>
-			<Header />
-		</AppWrapper>
+		<PageContext.Provider value={{ currentPage, setCurrentPage }}>
+			<AppWrapper>
+				<Header />
+			</AppWrapper>
+		</PageContext.Provider>
 	);
 };
 

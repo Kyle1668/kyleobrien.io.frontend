@@ -1,5 +1,4 @@
 import React from "react";
-
 import SocialIconBar from "./SocialIconBar";
 import HeaderWrapper from "./HeaderWrapper";
 import ImageContainer from "../../shared/ImageContainer";
@@ -8,13 +7,13 @@ import TextContainer from "../../shared/TextContainer";
 import BioText from "./BioText";
 import ButtonContainer from "../../shared/ButtonContainer";
 import NavButton from "./NavButton";
-import { PageContext, startPage } from "../../pages/PageContext";
+import { usePageContext } from "../../pages/PageContext";
 
 const Header: React.FC = () => {
-	const [currentPage, setCurrentPage] = React.useState(startPage);
+	const { currentPage, setCurrentPage } = usePageContext();
 
 	return (
-		<PageContext.Provider value={{ currentPage, setCurrentPage }}>
+		<div>
 			<SocialIconBar />
 			<HeaderWrapper>
 				<ImageContainer>
@@ -50,7 +49,7 @@ const Header: React.FC = () => {
 					</NavButton>
 				</ButtonContainer>
 			</HeaderWrapper>
-		</PageContext.Provider>
+		</div>
 	);
 };
 
