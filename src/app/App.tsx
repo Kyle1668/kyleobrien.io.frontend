@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "./Header/Header";
+import ArticleItemsList from "./Writing/ArticleItemsList";
 import { PageContext, startPage } from "../pages/PageContext";
 
 const AppWrapper = styled.div`
@@ -17,6 +18,7 @@ const App: React.FC = () => {
 		<PageContext.Provider value={{ currentPage, setCurrentPage }}>
 			<AppWrapper>
 				<Header />
+				{currentPage === "writing" && <ArticleItemsList />}
 			</AppWrapper>
 		</PageContext.Provider>
 	);
