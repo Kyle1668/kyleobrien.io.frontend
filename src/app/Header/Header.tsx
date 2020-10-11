@@ -8,10 +8,13 @@ import TextContainer from "../../shared/TextContainer";
 import BioText from "./BioText";
 import ButtonContainer from "../../shared/ButtonContainer";
 import NavButton from "./NavButton";
+import { PageContext, startPage } from "../../pages/PageContext";
 
 const Header: React.FC = () => {
+	const [currentPage, setCurrentPage] = React.useState(startPage);
+
 	return (
-		<div>
+		<PageContext.Provider value={{ currentPage, setCurrentPage }}>
 			<SocialIconBar />
 			<HeaderWrapper>
 				<ImageContainer>
@@ -23,16 +26,31 @@ const Header: React.FC = () => {
 				</ImageContainer>
 				<TextContainer>
 					<BioText>
-						Hi, I’m a software engineer and writer living in Bellevue, Washington{" "}
+						Hi, I’m a software engineer and writer living in Bellevue, Washington
 					</BioText>
 				</TextContainer>
 				<ButtonContainer>
-					<NavButton isActive>Articles</NavButton>
-					<NavButton isActive={false}>About</NavButton>
-					<NavButton isActive={false}>Experience</NavButton>
+					<NavButton
+						isActive={currentPage === "writing"}
+						onClick={() => setCurrentPage("writing")}
+					>
+						Writing
+					</NavButton>
+					<NavButton
+						isActive={currentPage === "about"}
+						onClick={() => setCurrentPage("about")}
+					>
+						About
+					</NavButton>
+					<NavButton
+						isActive={currentPage === "experience"}
+						onClick={() => setCurrentPage("experience")}
+					>
+						Experience
+					</NavButton>
 				</ButtonContainer>
 			</HeaderWrapper>
-		</div>
+		</PageContext.Provider>
 	);
 };
 

@@ -13,6 +13,7 @@ const inactiveStyles = css`
 	:hover {
 		color: #ffffff;
 		background: #343a40;
+		transition-duration: 0.2s;
 	}
 `;
 
