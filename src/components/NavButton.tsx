@@ -1,20 +1,40 @@
-import React from "react";
+import styled, { css } from "styled-components";
 
-import "../stylesheets/NavButton.scss";
+const activeStyles = css`
+	color: #ffffff;
+	background: #343a40;
+`;
 
-interface props {
-	pageName: string;
-	isCurrentPage: boolean;
+const inactiveStyles = css`
+	color: #343a40;
+	background: #ffffff;
+	border: 1px solid #343a40;
+	:hover {
+		color: #ffffff;
+		background: #343a40;
+	}
+`;
+
+interface NavButtonProps {
+	isActive: boolean;
 }
 
-const NavButton: React.FC<props> = (input: props) => {
-	const activeClassName = input.isCurrentPage === true ? "ActiveNavButton" : "InactiveNavButton";
+const Button = styled.b`
+	font-weight: normal;
+	font-size: 15px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 20px;
+	border: none;
+	transition: 0.3s;
+	outline: none;
+	max-width: 140px;
+	min-width: 100px;
+`;
 
-	return (
-		<button className={`NavButton ${activeClassName}`} type="button">
-			{input.pageName}
-		</button>
-	);
-};
-
-export default NavButton;
+export default styled(Button)<NavButtonProps>`
+	${(props) => (props.isActive ? activeStyles : inactiveStyles)};
+`;

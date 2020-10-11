@@ -39,7 +39,11 @@ const ButtonContainer = styled.div`
 	margin-top: 25px;
 `;
 
-const PageNavButton = styled(NavButton)`
+interface PageNavButtonProps {
+	isActive: boolean;
+}
+
+const PageNavButton = styled(NavButton)<PageNavButtonProps>`
 	margin-left: 25px;
 	margin-right: 25px;
 	width: 160px;
@@ -62,9 +66,9 @@ const Header: React.FC = () => {
 				</BioText>
 			</TextContainer>
 			<ButtonContainer>
-				<PageNavButton pageName="Articles" isCurrentPage />
-				<PageNavButton pageName="About" isCurrentPage={false} />
-				<PageNavButton pageName="Experience" isCurrentPage={false} />
+				<PageNavButton isActive>Articles</PageNavButton>
+				<PageNavButton isActive={false}>About</PageNavButton>
+				<PageNavButton isActive={false}>Experience</PageNavButton>
 			</ButtonContainer>
 		</HeaderWrapper>
 	);
