@@ -6,13 +6,6 @@ import AbouteItemsList from "./About/AboutItemsList";
 import ExperienceItemList from "./Experience/ExperienceItemList";
 import { PageContext, startPage } from "../pages/PageContext";
 
-const AppWrapper = styled.div`
-	color: #343a40;
-	background-color: #ffffff;
-	font-family: "Roboto script=all rev=1";
-	font-weight: 400;
-`;
-
 const App: React.FC = () => {
 	const [currentPage, setCurrentPage] = React.useState(startPage);
 
@@ -29,3 +22,10 @@ const App: React.FC = () => {
 };
 
 export default App;
+
+const AppWrapper = styled.div`
+	color: #343a40;
+	background-color: #ffffff;
+	font-family: "Roboto script=all rev=1";
+	font-weight: 400;
+`;

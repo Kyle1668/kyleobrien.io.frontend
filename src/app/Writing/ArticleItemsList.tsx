@@ -20,6 +20,12 @@ const GetArticles = (): JSX.Element[] => {
 	});
 };
 
+const ArticleItemsList: React.FC = () => {
+	return <ArticleItemsListWrapper>{GetArticles()}</ArticleItemsListWrapper>;
+};
+
+export default ArticleItemsList;
+
 const ArticleItemsListWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -27,9 +33,3 @@ const ArticleItemsListWrapper = styled.div`
 	padding-right: 30%;
 	padding-bottom: 10%;
 `;
-
-const ArticleItemsList: React.FC = () => {
-	return <ArticleItemsListWrapper>{GetArticles()}</ArticleItemsListWrapper>;
-};
-
-export default ArticleItemsList;

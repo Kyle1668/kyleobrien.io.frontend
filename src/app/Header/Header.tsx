@@ -1,10 +1,8 @@
 import React from "react";
+import styled from "styled-components";
 import SocialIconBar from "./SocialIconBar";
-import HeaderWrapper from "./HeaderWrapper";
 import ImageContainer from "../../shared/ImageContainer";
-import ProfilePicture from "./ProfilePicture";
 import TextContainer from "../../shared/TextContainer";
-import BioText from "./BioText";
 import ButtonContainer from "../../shared/ButtonContainer";
 import NavButton from "./NavButton";
 import { usePageContext } from "../../pages/PageContext";
@@ -54,3 +52,20 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+
+const HeaderWrapper = styled.div`
+	padding-top: 100px;
+	padding-bottom: 100px;
+	text-align: center;
+`;
+
+const ProfilePicture = styled.img`
+	height: 150px;
+	width: 150px;
+	border-radius: 50%;
+	border: 2px solid black;
+`;
+
+const BioText = styled.p`
+	font-size: 20px;
+`;

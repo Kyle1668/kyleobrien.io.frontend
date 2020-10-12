@@ -3,6 +3,30 @@ import styled from "styled-components";
 import Button from "../../shared/Button";
 import IArticle from "../../library/IArticle";
 
+interface ArticleTitleProps {
+	headingWeight: 1 | 2 | 3 | 4;
+}
+
+const Article: React.FC<IArticle> = (props: IArticle) => {
+	const { title, subTitle, date, body, url } = props;
+
+	return (
+		<ArticleContainer>
+			<ArticleContainerHead>
+				<ArticleTitle headingWeight={1}>{title}</ArticleTitle>
+				<ArticleTitle headingWeight={2}>{subTitle}</ArticleTitle>
+				<ArticleTitle headingWeight={2}>{date}</ArticleTitle>
+			</ArticleContainerHead>
+			<ArticleContainerBodyText>{body}</ArticleContainerBodyText>
+			<ArticleButtonLinkWrapper href={url}>
+				<ArticleButton>Continue</ArticleButton>
+			</ArticleButtonLinkWrapper>
+		</ArticleContainer>
+	);
+};
+
+export default Article;
+
 const ArticleContainer = styled.div`
 	font-family: Lato;
 	margin-top: 2rem;
@@ -15,6 +39,11 @@ const ArticleContainerHead = styled.div`
 	:h1 {
 		font-size: 24px;
 	}
+`;
+
+const ArticleTitle = styled.h1<ArticleTitleProps>`
+	font-size: ${(props) => (props.headingWeight === 1 ? "32px" : "18px")};
+	color: ${(props) => (props.headingWeight === 1 ? "#343a40" : "#595959")};
 `;
 
 const ArticleContainerBodyText = styled.p`
@@ -38,32 +67,3 @@ const ArticleButton = styled(Button)`
 	padding-top: 10px;
 	padding-bottom: 10px;
 `;
-
-interface ArticleTitleProps {
-	headingWeight: 1 | 2 | 3 | 4;
-}
-
-const ArticleTitle = styled.h1<ArticleTitleProps>`
-	font-size: ${(props) => (props.headingWeight === 1 ? "32px" : "18px")};
-	color: ${(props) => (props.headingWeight === 1 ? "#343a40" : "#595959")};
-`;
-
-const Article: React.FC<IArticle> = (props: IArticle) => {
-	const { title, subTitle, date, body, url } = props;
-
-	return (
-		<ArticleContainer>
-			<ArticleContainerHead>
-				<ArticleTitle headingWeight={1}>{title}</ArticleTitle>
-				<ArticleTitle headingWeight={2}>{subTitle}</ArticleTitle>
-				<ArticleTitle headingWeight={2}>{date}</ArticleTitle>
-			</ArticleContainerHead>
-			<ArticleContainerBodyText>{body}</ArticleContainerBodyText>
-			<ArticleButtonLinkWrapper href={url}>
-				<ArticleButton>Continue</ArticleButton>
-			</ArticleButtonLinkWrapper>
-		</ArticleContainer>
-	);
-};
-
-export default Article;
