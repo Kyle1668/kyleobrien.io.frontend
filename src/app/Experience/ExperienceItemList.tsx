@@ -1,11 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { ExperienceContextConsumer } from "./ExperienceContext";
 import Experience from "./Experience";
 import IExperience from "../../library/IExperience";
-import { mockExperiences } from "../../tests/mockData";
 
-const GetExperiences = (): JSX.Element[] => {
-	const experiences = mockExperiences;
+const renderExperiences = (experiences: IExperience[]): JSX.Element[] => {
 	return experiences.map((experience: IExperience) => {
 		return (
 			<Experience
@@ -20,6 +19,20 @@ const GetExperiences = (): JSX.Element[] => {
 	});
 };
 
+const ExperienceItemList: React.FC = () => {
+	return (
+		<ExperienceContextConsumer>
+			{(context) => (
+				<ExperienceItemsListWrapper>
+					{renderExperiences(context.experiences)}
+				</ExperienceItemsListWrapper>
+			)}
+		</ExperienceContextConsumer>
+	);
+};
+
+export default ExperienceItemList;
+
 const ExperienceItemsListWrapper = styled.div`
 	display: flex;
 	flex-direction: column;
@@ -27,9 +40,3 @@ const ExperienceItemsListWrapper = styled.div`
 	padding-right: 30%;
 	padding-bottom: 10%;
 `;
-
-const ExperienceItemList: React.FC = () => {
-	return <ExperienceItemsListWrapper>{GetExperiences()}</ExperienceItemsListWrapper>;
-};
-
-export default ExperienceItemList;
