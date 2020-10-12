@@ -1,12 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { ArticleContextConsumer } from "./ArticlesContext";
 import Article from "./Article";
 import IArticle from "../../library/IArticle";
-import { mockArticles } from "../../tests/mockData";
 
-const GetArticles = (): JSX.Element[] => {
-	const articles = mockArticles;
-
+const renderArticles = (articles: IArticle[]): JSX.Element[] => {
 	return articles.map((article: IArticle) => {
 		return (
 			<Article
@@ -21,7 +19,15 @@ const GetArticles = (): JSX.Element[] => {
 };
 
 const ArticleItemsList: React.FC = () => {
-	return <ArticleItemsListWrapper>{GetArticles()}</ArticleItemsListWrapper>;
+	return (
+		<ArticleContextConsumer>
+			{(context) => (
+				<ArticleItemsListWrapper>
+					{renderArticles(context.articles)}
+				</ArticleItemsListWrapper>
+			)}
+		</ArticleContextConsumer>
+	);
 };
 
 export default ArticleItemsList;

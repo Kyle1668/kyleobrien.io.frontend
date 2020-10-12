@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import Header from "./Header/Header";
-import ArticleItemsList from "./Writing/ArticleItemsList";
 import AbouteItemsList from "./About/AboutItemsList";
 import ExperiencePage from "./Experience/ExperiencePage";
+import ArticlesPage from "./Writing/ArticlesPage";
 import { PageContext, startPage } from "../pages/PageContext";
 
 const App: React.FC = () => {
@@ -13,7 +13,7 @@ const App: React.FC = () => {
 		<PageContext.Provider value={{ currentPage, setCurrentPage }}>
 			<AppWrapper>
 				<Header />
-				{currentPage === "writing" && <ArticleItemsList />}
+				{currentPage === "writing" && <ArticlesPage />}
 				{currentPage === "about" && <AbouteItemsList />}
 				{currentPage === "experience" && <ExperiencePage />}
 			</AppWrapper>
