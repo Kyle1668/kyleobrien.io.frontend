@@ -1,4 +1,44 @@
 import IExperience from "../library/IExperience";
+import IArticle from "../library/IArticle";
+
+export const mockArticles: IArticle[] = [
+	{
+		title: "Essense of Technical Leadership",
+		subTitle: "Guide for students on how to get yoru first internship.",
+		date: "December 2018",
+		url:
+			"https://medium.com/students-corner/strategies-for-landing-a-tech-internship-57f9370f533c",
+		body:
+			"Looking for an internship is fucking stressful. The task ahead of you is daunting. Convince a company to spend thousands of dollars to interview, onboard, train, and mentor you. I’ve found that most of my peers are eager to obtain these opportunities, but ...",
+	},
+	{
+		title: "Essense of Technical Leadership",
+		subTitle: "Guide for students on how to get yoru first internship.",
+		date: "December 2018",
+		url:
+			"https://medium.com/students-corner/strategies-for-landing-a-tech-internship-57f9370f533c",
+		body:
+			"Looking for an internship is fucking stressful. The task ahead of you is daunting. Convince a company to spend thousands of dollars to interview, onboard, train, and mentor you. I’ve found that most of my peers are eager to obtain these opportunities, but ...",
+	},
+	{
+		title: "Essense of Technical Leadership",
+		subTitle: "Guide for students on how to get yoru first internship.",
+		date: "December 2018",
+		url:
+			"https://medium.com/students-corner/strategies-for-landing-a-tech-internship-57f9370f533c",
+		body:
+			"Looking for an internship is fucking stressful. The task ahead of you is daunting. Convince a company to spend thousands of dollars to interview, onboard, train, and mentor you. I’ve found that most of my peers are eager to obtain these opportunities, but ...",
+	},
+	{
+		title: "Essense of Technical Leadership",
+		subTitle: "Guide for students on how to get yoru first internship.",
+		date: "December 2018",
+		url:
+			"https://medium.com/students-corner/strategies-for-landing-a-tech-internship-57f9370f533c",
+		body:
+			"Looking for an internship is fucking stressful. The task ahead of you is daunting. Convince a company to spend thousands of dollars to interview, onboard, train, and mentor you. I’ve found that most of my peers are eager to obtain these opportunities, but ...",
+	},
+];
 
 export const mockExperiences: IExperience[] = [
 	{
