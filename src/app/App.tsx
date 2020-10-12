@@ -3,6 +3,7 @@ import styled from "styled-components";
 import Header from "./Header/Header";
 import ArticleItemsList from "./Writing/ArticleItemsList";
 import AbouteItemsList from "./About/AboutItemsList";
+import ExperienceItemList from "./Experience/ExperienceItemList";
 import { PageContext, startPage } from "../pages/PageContext";
 
 const AppWrapper = styled.div`
@@ -21,7 +22,7 @@ const App: React.FC = () => {
 				<Header />
 				{currentPage === "writing" && <ArticleItemsList />}
 				{currentPage === "about" && <AbouteItemsList />}
-				{currentPage === "experience" && <ArticleItemsList />}
+				{currentPage === "experience" && <ExperienceItemList />}
 			</AppWrapper>
 		</PageContext.Provider>
 	);
