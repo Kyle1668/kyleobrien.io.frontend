@@ -1,27 +1,38 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { ThemeProvider, DefaultTheme } from "styled-components";
 import Header from "./Header/Header";
 import AbouteItemsList from "./About/AboutItemsList";
 import ExperiencePage from "./Experience/ExperiencePage";
 import ArticlesPage from "./Writing/ArticlesPage";
-import { PageContext, startPage } from "../pages/PageContext";
+import { AppContextProvider, startPage } from "./AppContex";
 
 const App: React.FC = () => {
 	const [currentPage, setCurrentPage] = React.useState(startPage);
 
 	return (
-		<PageContext.Provider value={{ currentPage, setCurrentPage }}>
-			<AppWrapper>
-				<Header />
-				{currentPage === "writing" && <ArticlesPage />}
-				{currentPage === "about" && <AbouteItemsList />}
-				{currentPage === "experience" && <ExperiencePage />}
-			</AppWrapper>
-		</PageContext.Provider>
+		<ThemeProvider theme={lightTheme}>
+			<AppContextProvider value={{ currentPage, setCurrentPage }}>
+				<AppWrapper>
+					<Header />
+					{currentPage === "writing" && <ArticlesPage />}
+					{currentPage === "about" && <AbouteItemsList />}
+					{currentPage === "experience" && <ExperiencePage />}
+				</AppWrapper>
+			</AppContextProvider>
+		</ThemeProvider>
 	);
 };
 
 export default App;
+
+const lightTheme: DefaultTheme = {
+	font: "Lato",
+	colors: {
+		darkGray: "#343a40",
+		lightGray: "#c4c4c4",
+		white: "#ffffff",
+	},
+};
 
 const AppWrapper = styled.div`
 	color: #343a40;

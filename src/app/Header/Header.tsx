@@ -5,13 +5,11 @@ import ImageContainer from "../../shared/ImageContainer";
 import TextContainer from "../../shared/TextContainer";
 import ButtonContainer from "../../shared/ButtonContainer";
 import NavButton from "./NavButton";
-import { usePageContext } from "../../pages/PageContext";
+import { AppContextConsumer } from "../AppContex";
 
 const Header: React.FC = () => {
-	const { currentPage, setCurrentPage } = usePageContext();
-
 	return (
-		<div>
+		<AppContextConsumer>
 			<SocialIconBar />
 			<HeaderWrapper>
 				<ImageContainer>
@@ -47,7 +45,7 @@ const Header: React.FC = () => {
 					</NavButton>
 				</ButtonContainer>
 			</HeaderWrapper>
-		</div>
+		</AppContextConsumer>
 	);
 };
 

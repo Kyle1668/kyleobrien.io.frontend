@@ -4,11 +4,11 @@ import "styled-components";
 // and extend them!
 declare module "styled-components" {
 	export interface DefaultTheme {
-		borderRadius: string;
-
+		font: string;
 		colors: {
-			main: string;
-			secondary: string;
+			darkGray: string;
+			lightGray: string;
+			white: string;
 		};
 	}
 }
