@@ -10,48 +10,53 @@ import { AppContextConsumer } from "../AppContex";
 const Header: React.FC = () => {
 	return (
 		<AppContextConsumer>
-			<SocialIconBar />
-			<HeaderWrapper>
-				<ImageContainer>
-					<ProfilePicture
-						id="profile-picture"
-						src="https://koioassets.blob.core.windows.net/images/zoka-profile-cropped.png"
-						alt="Kyle in a coffee shop"
-					/>
-				</ImageContainer>
-				<TextContainer>
-					<BioText>
-						Hi, I’m a software engineer and writer living in Bellevue, Washington
-					</BioText>
-				</TextContainer>
-				<ButtonContainer>
-					<NavButton
-						isActive={currentPage === "writing"}
-						onClick={() => setCurrentPage("writing")}
-					>
-						Writing
-					</NavButton>
-					<NavButton
-						isActive={currentPage === "about"}
-						onClick={() => setCurrentPage("about")}
-					>
-						About
-					</NavButton>
-					<NavButton
-						isActive={currentPage === "experience"}
-						onClick={() => setCurrentPage("experience")}
-					>
-						Experience
-					</NavButton>
-				</ButtonContainer>
-			</HeaderWrapper>
+			{(context) => (
+				<div>
+					<SocialIconBar />
+					<HeaderPrimaryContent>
+						<ImageContainer>
+							<ProfilePicture
+								id="profile-picture"
+								src="https://koioassets.blob.core.windows.net/images/zoka-profile-cropped.png"
+								alt="Kyle in a coffee shop"
+							/>
+						</ImageContainer>
+						<TextContainer>
+							<BioText>
+								Hi, I’m a software engineer and writer living in Bellevue,
+								Washington
+							</BioText>
+						</TextContainer>
+						<ButtonContainer>
+							<NavButton
+								isActive={context.currentPage === "writing"}
+								onClick={() => context.setCurrentPage("writing")}
+							>
+								Writing
+							</NavButton>
+							<NavButton
+								isActive={context.currentPage === "about"}
+								onClick={() => context.setCurrentPage("about")}
+							>
+								About
+							</NavButton>
+							<NavButton
+								isActive={context.currentPage === "experience"}
+								onClick={() => context.setCurrentPage("experience")}
+							>
+								Experience
+							</NavButton>
+						</ButtonContainer>
+					</HeaderPrimaryContent>
+				</div>
+			)}
 		</AppContextConsumer>
 	);
 };
 
 export default Header;
 
-const HeaderWrapper = styled.div`
+const HeaderPrimaryContent = styled.div`
 	padding-top: 100px;
 	padding-bottom: 100px;
 	text-align: center;
