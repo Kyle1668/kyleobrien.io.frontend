@@ -34,9 +34,9 @@ const ExperienceItemList: React.FC = () => {
 export default ExperienceItemList;
 
 const ExperienceItemsListWrapper = styled.div`
-	display: flex;
-	flex-direction: column;
-	padding-left: 30%;
-	padding-right: 30%;
-	padding-bottom: 10%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 30%;
+  padding-right: 30%;
+  padding-bottom: 10%;
 `;

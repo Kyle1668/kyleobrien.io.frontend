@@ -43,19 +43,19 @@ const ArticleContainerHead = styled.div`
 `;
 
 const ArticleTitle = styled.h1<ArticleTitleProps>`
-	font-size: ${(props) => (props.headingWeight === 1 ? "32px" : "18px")};
-	color: ${(props) => (props.headingWeight === 1 ? "#343a40" : "#595959")};
+  font-size: ${(props) => (props.headingWeight === 1 ? "32px" : "18px")};
+  color: ${(props) => (props.headingWeight === 1 ? "#343a40" : "#595959")};
 `;
 
 const ArticleContainerBodyText = styled.p`
-	font-size: 18px;
-	line-height: 30px;
-	margin-top: 25px;
-	margin-bottom: 35px;
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 25px;
+  margin-bottom: 35px;
 `;
 
 const ArticleButtonLinkWrapper = styled.a`
-	text-decoration: none;
+  text-decoration: none;
 `;
 
 const ArticleButton = styled(Button)`

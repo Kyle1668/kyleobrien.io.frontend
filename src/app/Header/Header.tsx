@@ -57,18 +57,18 @@ const Header: React.FC = () => {
 export default Header;
 
 const HeaderPrimaryContent = styled.div`
-	padding-top: 100px;
-	padding-bottom: 100px;
-	text-align: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  text-align: center;
 `;
 
 const ProfilePicture = styled.img`
-	height: 150px;
-	width: 150px;
-	border-radius: 50%;
-	border: 2px solid black;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  border: 2px solid black;
 `;
 
 const BioText = styled.p`
-	font-size: 20px;
+  font-size: 20px;
 `;

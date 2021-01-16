@@ -4,7 +4,7 @@ import Button from "../../shared/Button";
 import IExperience from "../../library/IExperience";
 
 const ExperienceContainer = styled.div`
-  font-family: Lato, monospace;
+  font-family: Lato, sans-serif;
   margin-top: 2rem;
   margin-bottom: 2rem;
 `;
@@ -12,9 +12,10 @@ const ExperienceContainer = styled.div`
 const ExperienceContainerHead = styled.div`
   padding-bottom: 15px;
   border-bottom: 2px solid #c4c4c4;
-  //:h1 {
-  //	font-size: 24px;
-  //}
+
+  .h1 {
+    font-size: 24px;
+  }
 `;
 
 const ExperienceContainerBodyText = styled.p`

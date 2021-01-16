@@ -30,8 +30,8 @@ const lightTheme: DefaultTheme = {
 	colors: {
 		darkGray: "#343a40",
 		lightGray: "#c4c4c4",
-		white: "#ffffff",
-	},
+		white: "#ffffff"
+	}
 };
 
 const AppWrapper = styled.div`
