@@ -1,7 +1,7 @@
 import React from "react";
-import styled, { ThemeProvider, DefaultTheme } from "styled-components";
+import styled, { DefaultTheme, ThemeProvider } from "styled-components";
 import Header from "./Header/Header";
-import AbouteItemsList from "./About/AboutItemsList";
+import AboutItemsList from "./About/AboutItemsList";
 import ExperiencePage from "./Experience/ExperiencePage";
 import ArticlesPage from "./Writing/ArticlesPage";
 import { AppContextProvider, startPage } from "./AppContex";
@@ -15,7 +15,7 @@ const App: React.FC = () => {
 				<AppWrapper>
 					<Header />
 					{currentPage === "writing" && <ArticlesPage />}
-					{currentPage === "about" && <AbouteItemsList />}
+					{currentPage === "about" && <AboutItemsList />}
 					{currentPage === "experience" && <ExperiencePage />}
 				</AppWrapper>
 			</AppContextProvider>
@@ -35,8 +35,8 @@ const lightTheme: DefaultTheme = {
 };
 
 const AppWrapper = styled.div`
-	color: #343a40;
-	background-color: #ffffff;
-	font-family: "Roboto script=all rev=1";
-	font-weight: 400;
+  color: #343a40;
+  background-color: #ffffff;
+  font-family: "Roboto script=all rev=1", monospace;
+  font-weight: 400;
 `;

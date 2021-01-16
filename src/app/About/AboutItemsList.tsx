@@ -2,18 +2,18 @@ import React from "react";
 import styled from "styled-components";
 
 const AboutPageHeader = styled.h1`
-	font-size: 32px;
-	text-align: center;
-	font-family: Lato;
-	font-weight: light;
+  font-size: 32px;
+  text-align: center;
+  font-family: Lato, monospace;
+  font-weight: lighter;
 `;
 
 const AboutParagraph = styled.p`
-	font-family: Lato;
-	font-style: normal;
-	font-weight: normal;
-	font-size: 20px;
-	line-height: 40px;
+  font-family: Lato, monospace;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 20px;
+  line-height: 40px;
 `;
 
 const GetParagraphs = (): JSX.Element[] => {

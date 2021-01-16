@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { ArticleContextProvider, getArticles } from "./ArticlesContext";
 import ArticleItemsList from "./ArticleItemsList";
 

@@ -28,17 +28,18 @@ const Article: React.FC<IArticle> = (props: IArticle) => {
 export default Article;
 
 const ArticleContainer = styled.div`
-	font-family: Lato;
-	margin-top: 2rem;
-	margin-bottom: 2rem;
+  font-family: Lato, monospace;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 `;
 
 const ArticleContainerHead = styled.div`
-	padding-bottom: 15px;
-	border-bottom: 2px solid #c4c4c4;
-	:h1 {
-		font-size: 24px;
-	}
+  padding-bottom: 15px;
+  border-bottom: 2px solid #c4c4c4;
+
+  .h1 {
+    font-size: 24px;
+  }
 `;
 
 const ArticleTitle = styled.h1<ArticleTitleProps>`
@@ -58,12 +59,9 @@ const ArticleButtonLinkWrapper = styled.a`
 `;
 
 const ArticleButton = styled(Button)`
-	color: #ffffff;
-	font-size: 14;
-	background: #343a40;
-	width: 150px;
-	padding-left: 30px;
-	padding-right: 30px;
-	padding-top: 10px;
-	padding-bottom: 10px;
+  color: #ffffff;
+  font-size: 14px;
+  background: #343a40;
+  width: 150px;
+  padding: 10px 30px;
 `;

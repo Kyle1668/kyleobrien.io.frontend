@@ -6,13 +6,13 @@ export const getExperiences = (): IExperience[] => {
 	return mockExperiences;
 };
 
-export type ExperiencecontextType = {
+export type ExperienceContextType = {
 	experiences: IExperience[];
 };
 
-const defaultContextValue: ExperiencecontextType = { experiences: [] };
+const defaultContextValue: ExperienceContextType = { experiences: [] };
 
-const context = createContext<ExperiencecontextType>(defaultContextValue);
+const context = createContext<ExperienceContextType>(defaultContextValue);
 
 export const ExperienceContextProvider = context.Provider;
 
