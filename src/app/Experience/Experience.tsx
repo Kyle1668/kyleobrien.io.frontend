@@ -12,7 +12,6 @@ const ExperienceContainer = styled.div`
 const ExperienceContainerHead = styled.div`
 	padding-bottom: 15px;
 	border-bottom: 2px solid #c4c4c4;
-
 	.h1 {
 		font-size: 24px;
 	}
@@ -32,6 +31,9 @@ const ExperienceButton = styled(Button)`
 	padding-top: 10px;
 	padding-bottom: 10px;
 	margin-right: 10px;
+	@media (max-width: 768px) {
+		margin-top: 2%;
+	}
 `;
 
 interface HeadingTitleProps {
@@ -51,6 +53,9 @@ const renderSummarySections = (rawSummary: string[]): JSX.Element[] =>
 const ExperienceTagsRow = styled.div`
 	display: flex;
 	flex-direction: row;
+	@media (max-width: 768px) {
+		flex-direction: column;
+	}
 `;
 
 const renderTags = (rawTags: string[]): JSX.Element[] =>
