@@ -30,13 +30,13 @@ const lightTheme: DefaultTheme = {
 	colors: {
 		darkGray: "#343a40",
 		lightGray: "#c4c4c4",
-		white: "#ffffff"
-	}
+		white: "#ffffff",
+	},
 };
 
 const AppWrapper = styled.div`
-  color: #343a40;
-  background-color: #ffffff;
-  font-family: "Roboto script=all rev=1", monospace;
-  font-weight: 400;
+	color: #343a40;
+	background-color: #ffffff;
+	font-family: "Roboto script=all rev=1", monospace;
+	font-weight: 400;
 `;

@@ -27,39 +27,39 @@ const SocialIconBar: React.FC = () => {
 export default SocialIconBar;
 
 const SocialIconRowContainer = styled.div`
-  margin-top: 50px;
-  margin-left: 200px;
+	margin-top: 50px;
+	margin-left: 200px;
 `;
 
 const SocialIconRow = styled.div`
-  display: flex;
-  flex-direction: row;
+	display: flex;
+	flex-direction: row;
 `;
 
 const IconAnchorWrapper = styled.a`
-  color: inherit;
-  text-decoration: none;
+	color: inherit;
+	text-decoration: none;
 `;
 
 const socialIconStyles = css`
-  height: 30px;
-  width: 30px;
-  color: #343a40;
-  margin: 15px;
+	height: 30px;
+	width: 30px;
+	color: #343a40;
+	margin: 15px;
 `;
 
 const LinkedInIcon = styled(FaLinkedin)`
-  ${socialIconStyles}
+	${socialIconStyles}
 `;
 
 const GithubIcon = styled(FaGithub)`
-  ${socialIconStyles}
+	${socialIconStyles}
 `;
 
 const MediumIcon = styled(FaMedium)`
-  ${socialIconStyles}
+	${socialIconStyles}
 `;
 
 const EmailIcon = styled(MdEmail)`
-  ${socialIconStyles}
+	${socialIconStyles}
 `;

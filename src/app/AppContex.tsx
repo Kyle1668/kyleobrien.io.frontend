@@ -2,7 +2,7 @@ import { createContext } from "react";
 
 const context = createContext<PageContextType>({
 	currentPage: "writing",
-	setCurrentPage: () => ""
+	setCurrentPage: () => "",
 });
 
 export type PageContextType = {

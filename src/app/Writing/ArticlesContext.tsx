@@ -3,7 +3,7 @@ import IArticle from "../../library/IArticle";
 import { mockArticles } from "../../tests/mockData";
 
 const defaultValues: ArticleContextData = {
-	articles: []
+	articles: [],
 };
 
 const context = createContext<ArticleContextData>(defaultValues);

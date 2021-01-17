@@ -66,7 +66,7 @@ const ProfilePicture = styled.img`
 	height: 150px;
 	width: 150px;
 	border-radius: 50%;
-	border: 2px solid black;
+	border: 1px solid black;
 `;
 
 const BioText = styled.p`

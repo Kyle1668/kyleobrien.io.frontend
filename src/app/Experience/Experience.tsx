@@ -4,18 +4,18 @@ import Button from "../../shared/Button";
 import IExperience from "../../library/IExperience";
 
 const ExperienceContainer = styled.div`
-  font-family: Lato, sans-serif;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+	font-family: Lato, sans-serif;
+	margin-top: 2rem;
+	margin-bottom: 2rem;
 `;
 
 const ExperienceContainerHead = styled.div`
-  padding-bottom: 15px;
-  border-bottom: 2px solid #c4c4c4;
+	padding-bottom: 15px;
+	border-bottom: 2px solid #c4c4c4;
 
-  .h1 {
-    font-size: 24px;
-  }
+	.h1 {
+		font-size: 24px;
+	}
 `;
 
 const ExperienceContainerBodyText = styled.p`
@@ -26,12 +26,12 @@ const ExperienceContainerBodyText = styled.p`
 `;
 
 const ExperienceButton = styled(Button)`
-  color: #ffffff;
-  font-size: 14px;
-  background: #343a40;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  margin-right: 10px;
+	color: #ffffff;
+	font-size: 14px;
+	background: #343a40;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin-right: 10px;
 `;
 
 interface HeadingTitleProps {
@@ -39,8 +39,8 @@ interface HeadingTitleProps {
 }
 
 const ExperienceHeading = styled.h1<HeadingTitleProps>`
-  font-size: ${(props) => (props.headingWeight === 1 ? "32px" : "18px")};
-  color: ${(props) => (props.headingWeight === 1 ? "#343a40" : "#595959")};
+	font-size: ${(props) => (props.headingWeight === 1 ? "32px" : "18px")};
+	color: ${(props) => (props.headingWeight === 1 ? "#343a40" : "#595959")};
 `;
 
 const renderSummarySections = (rawSummary: string[]): JSX.Element[] =>
