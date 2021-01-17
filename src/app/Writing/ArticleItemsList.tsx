@@ -1,4 +1,5 @@
 import React from "react";
+import { Guid } from "guid-typescript";
 import { ArticleContextConsumer } from "./ArticlesContext";
 import Article from "./Article";
 import IArticle from "../../library/IArticle";
@@ -8,6 +9,7 @@ const renderArticles = (articles: IArticle[]): JSX.Element[] => {
 	return articles.map((article: IArticle) => {
 		return (
 			<Article
+				key={Guid.create().toString()}
 				title={article.title}
 				subTitle={article.subTitle}
 				date={article.date}

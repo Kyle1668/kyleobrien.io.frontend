@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Guid } from "guid-typescript";
 
 const AboutPageHeader = styled.h1`
 	font-size: 32px;
@@ -25,7 +26,9 @@ const GetParagraphs = (): JSX.Element[] => {
 		"I can be best reached via a linkedin message or at kyledevinobrien1@gmail.com.",
 	];
 
-	return paragraphs.map((paragraph: string) => <AboutParagraph>{paragraph}</AboutParagraph>);
+	return paragraphs.map((paragraph: string) => (
+		<AboutParagraph key={Guid.create().toString()}>{paragraph}</AboutParagraph>
+	));
 };
 
 const AboutItemsListWrapper = styled.div`
