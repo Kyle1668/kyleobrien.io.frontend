@@ -34,6 +34,10 @@ const AboutItemsListWrapper = styled.div`
 	padding-left: 30%;
 	padding-right: 30%;
 	padding-bottom: 10%;
+	@media (max-width: 768px) {
+		padding-left: 10%;
+		padding-right: 10%;
+	}
 `;
 
 const AboutItemsList: React.FC = () => {
