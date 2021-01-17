@@ -25,7 +25,11 @@ interface NavButtonProps {
 export default styled(Button)<NavButtonProps>`
 	margin-left: 25px;
 	margin-right: 25px;
+	height: 20px;
 	width: 160px;
 	text-align: center;
 	${(props) => (props.isActive ? activeStyles : inactiveStyles)};
+	@media (max-width: 500px) {
+		margin-top: 5%;
+	}
 `;

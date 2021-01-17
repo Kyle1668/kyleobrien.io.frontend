@@ -28,7 +28,10 @@ export default SocialIconBar;
 
 const SocialIconRowContainer = styled.div`
 	margin-top: 50px;
-	margin-left: 200px;
+	margin-left: 10vh;
+	@media (max-width: 500px) {
+		margin-left: 2vh;
+	}
 `;
 
 const SocialIconRow = styled.div`
@@ -46,6 +49,10 @@ const socialIconStyles = css`
 	width: 30px;
 	color: #343a40;
 	margin: 15px;
+	@media (max-width: 500px) {
+		height: 35px;
+		width: 35px;
+	}
 `;
 
 const LinkedInIcon = styled(FaLinkedin)`
